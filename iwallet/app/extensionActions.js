@@ -1,0 +1,28 @@
+const TX_ASK = 'TX_ASK'
+const TX_CONFIRM = 'TX_CONFIRM'
+const TX_CANCEL = 'TX_CANCEL'
+
+const CHANGE_NETWORK = 'CHANGE_NETWORK'
+const CHANGE_ACCOUNT = 'CHANGE_ACCOUNT'
+
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
+const SAVE_NEW_NETWORK = 'SAVE_NEW_NETWORK'
+
+module.exports = {
+  // tx
+  TX_ASK,
+  TX_CONFIRM,
+  TX_CANCEL,
+
+  // network
+  CHANGE_NETWORK,
+  CHANGE_ACCOUNT,
+
+  // auth
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+
+  // network
+  SAVE_NEW_NETWORK,
+}

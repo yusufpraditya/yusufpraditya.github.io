@@ -1,0 +1,2595 @@
+.rc-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  z-index: 100;
+}
+.rc-dialog-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rc-dialog-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: bold;
+}
+.rc-dialog-content {
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  background-clip: padding-box;
+  height: 100%;
+}
+.rc-dialog-close {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  font-size: 41px;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-weight: 400;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  text-decoration: none;
+}
+.rc-dialog-close-x:after {
+  content: '×';
+}
+.rc-dialog-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none;
+}
+.rc-dialog-header {
+  padding: 13px 20px 14px 20px;
+  border-radius: 5px 5px 0 0;
+  background: #fff;
+  color: #666;
+  border-bottom: 1px solid #e9e9e9;
+}
+.rc-dialog-body {
+  position: relative;
+  height: 100%;
+  padding: 20px 0;
+}
+.rc-dialog-footer {
+  border-top: 1px solid #e9e9e9;
+  padding: 10px 20px 10px 10px;
+  text-align: right;
+  border-radius: 0 0 5px 5px;
+}
+.rc-dialog-zoom-enter,
+.rc-dialog-zoom-appear {
+  opacity: 0;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+          animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.rc-dialog-zoom-leave {
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+          animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.rc-dialog-zoom-enter.rc-dialog-zoom-enter-active,
+.rc-dialog-zoom-appear.rc-dialog-zoom-appear-active {
+  -webkit-animation-name: rcDialogZoomIn;
+          animation-name: rcDialogZoomIn;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.rc-dialog-zoom-leave.rc-dialog-zoom-leave-active {
+  -webkit-animation-name: rcDialogZoomOut;
+          animation-name: rcDialogZoomOut;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes rcDialogZoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@keyframes rcDialogZoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes rcDialogZoomOut {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+}
+@keyframes rcDialogZoomOut {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+}
+.rc-dialog-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #979797;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* background-color: rgba(55, 55, 55, 0.6); */
+  height: 100%;
+  filter: alpha(opacity=50);
+  z-index: 1050;
+}
+.rc-dialog-mask-hidden {
+  display: none;
+}
+.rc-dialog-fade-enter,
+.rc-dialog-fade-appear {
+  opacity: 0;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+          animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.rc-dialog-fade-leave {
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+          animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.rc-dialog-fade-enter.rc-dialog-fade-enter-active,
+.rc-dialog-fade-appear.rc-dialog-fade-appear-active {
+  -webkit-animation-name: rcDialogFadeIn;
+          animation-name: rcDialogFadeIn;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.rc-dialog-fade-leave.rc-dialog-fade-leave-active {
+  -webkit-animation-name: rcDialogFadeOut;
+          animation-name: rcDialogFadeOut;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+@-webkit-keyframes rcDialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rcDialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.App {
+  position: relative;
+  overflow: hidden;
+  height: 600px; }
+
+.App__content {
+  position: relative; }
+@font-face {
+  font-family: 'SF-UI';
+  src: url(/static/fonts/SF-UI-Display-Regular.otf) format("opentype"); }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(/static/fonts/Roboto-Bold.ttf) format("truetype"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/static/fonts/Montserrat-Regular.ttf) format("truetype"); }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 360px;
+  height: 600px;
+  overflow: hidden;
+  word-break: break-word;
+  font-family: PingFang SC,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif; }
+  body * {
+    box-sizing: border-box;
+    -ms-overflow-style: none; }
+    body *::-webkit-scrollbar {
+      width: 1px;
+      background-color: transparent;
+      display: none !important; }
+  body a {
+    color: inherit; }
+  body p, body h1, body h2, body h3, body h4, body h5, body h6 {
+    margin: 0; }
+  body ul {
+    padding: 0;
+    margin: 0; }
+  body li {
+    list-style: none; }
+.LoadingImage {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 4px; }
+.Input {
+  outline: 0;
+  width: 300px;
+  height: 40px;
+  color: #333333;
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
+  font-size: 14px; }
+  .Input::-webkit-input-placeholder {
+    color: #B5B5B5;
+    font-size: 14px;
+    font-weight: 300; }
+.NetworkSelector {
+  display: inline-block;
+  z-index: 9; }
+.Button {
+  width: 300px;
+  height: 40px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  transition: background-color 300ms, color 300ms; }
+  .Button:hover {
+    background-color: rgba(43, 51, 56, 0.8); }
+  .Button:focus {
+    background-color: rgba(43, 51, 56, 0.9); }
+  .Button:disabled {
+    background-color: #e9e9e9; }
+  .Button.btn-account {
+    width: 120px;
+    height: 40px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid; }
+  .Button--blue {
+    color: #5670B0;
+    background-color: #FFFFFF;
+    border: 1px solid #5670B0; }
+    .Button--blue:hover {
+      color: #FFFFFF;
+      background-color: rgba(86, 112, 176, 0.8); }
+    .Button--blue:focus {
+      color: #FFFFFF;
+      background-color: rgba(86, 112, 176, 0.6); }
+
+.Button__loading {
+  display: inline-block;
+  width: 10px;
+  height: 10px; }
+.Dropdown {
+  position: relative;
+  border: 1px solid #5670B0;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 300ms; }
+  .Dropdown:hover {
+    background-color: #5670B0; }
+
+.Dropdown__currentItem {
+  color: #FFFFFF; }
+
+.Dropdown__menu {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 46px;
+  width: 300px;
+  right: -11px; }
+
+.Dropdown__menuItem {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center; }
+  .Dropdown__menuItem:hover {
+    background-color: rgba(255, 255, 255, 0.05); }
+.Tab__header {
+  margin-bottom: 20px; }
+
+.Tab__headerItem {
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 4px;
+  transition: border-color 300ms;
+  border-bottom: 3px solid #e5e5e5; }
+  .Tab__headerItem:hover {
+    border-color: rgba(86, 112, 176, 0.8); }
+  .Tab__headerItem--active {
+    border-color: #5670B0; }
+.TransactionSuccess {
+  font-family: 'Montserrat'; }
+
+.TransactionSuccess__title {
+  font-size: 20px;
+  margin-bottom: 6px;
+  text-align: center; }
+
+.TransactionSuccess__item {
+  display: block;
+  border-bottom: 1px solid #2B3338;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 10px; }
+  .TransactionSuccess__item--txhash {
+    font-size: 10px; }
+
+.TransactionSuccess__receipt {
+  border: 1px solid #2B3338;
+  padding: 10px; }
+.TransactionFailed {
+  font-family: 'Montserrat'; }
+
+.TransactionFailed__title {
+  font-size: 20px;
+  margin-bottom: 6px;
+  text-align: center; }
+
+.TransactionFailed__item {
+  display: block;
+  border-bottom: 1px solid #2B3338;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 10px; }
+  .TransactionFailed__item--txhash {
+    font-size: 10px; }
+  .TransactionFailed__item--message {
+    color: #D28B7B; }
+
+.TransactionFailed__receipt {
+  border: 1px solid #2B3338;
+  padding: 10px; }
+.UnpledgeGas__explanation {
+  text-align: left;
+  margin-bottom: 4px; }
+.PledgeGas__description {
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: left; }
+
+.PledgeGas__InputWrapper {
+  display: block;
+  width: 100%;
+  text-align: left; }
+
+.PledgeGas__Input {
+  width: 50%;
+  border-bottom: 1px solid #2B3338 !important;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 4px;
+  text-align: right; }
+
+.PledgeGas__InputDescription {
+  margin-top: 2px;
+  margin-left: 4px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: bottom; }
+
+.PledgeGas__advancedOption {
+  margin-top: 2px;
+  text-align: right;
+  text-decoration: underline;
+  color: #5670B0;
+  cursor: pointer; }
+
+.PledgeGas__pledgeButton {
+  margin: 10px auto;
+  display: block;
+  width: 50%; }
+
+.PledgeGas__expectedEarnGas {
+  color: grey;
+  font-size: 10px;
+  width: 100%;
+  text-align: left; }
+
+.PledgeGas__ramPrice {
+  text-align: left;
+  font-size: 10px;
+  color: grey; }
+.PledgerList {
+  width: 100%;
+  max-height: 300px;
+  padding-bottom: 4px;
+  overflow: scroll;
+  border: 1px solid #2B3338; }
+
+.PledgerList__item {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top; }
+
+.PledgerList__itemInner {
+  cursor: pointer;
+  display: block;
+  border: 1px solid #2D2E31;
+  margin: 6px;
+  transition: border 200ms;
+  min-height: 50px;
+  padding: 4px; }
+  .PledgerList__itemInner:hover {
+    border: 2px solid #D28B7B; }
+
+.PledgerList__unpledgeButton {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2px;
+  padding: 6px;
+  background-color: #D28B7B; }
+
+.PledgerList__itemDescription {
+  font-family: monospace; }
+.GasPledge {
+  font-family: 'Montserrat'; }
+.UserGasStatus {
+  margin-bottom: 10px; }
+
+.UserGasStatus__title {
+  margin-bottom: 4px; }
+
+.UserGasStatus__gauge {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  box-shadow: aliceblue 2px 2px 2px 2px; }
+
+.UserGasStatus__bar {
+  position: absolute;
+  background-color: #364869;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px; }
+
+.UserGasStatus__barDescription {
+  margin-top: 4px;
+  font-size: 10px;
+  text-align: center; }
+.UserRamStatus__title {
+  margin-bottom: 4px; }
+
+.UserRamStatus__gauge {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  box-shadow: aliceblue 2px 2px 2px 2px; }
+
+.UserRamStatus__bar {
+  position: absolute;
+  background-color: #599188;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; }
+
+.UserRamStauts__barDescription {
+  margin-top: 4px;
+  font-size: 10px;
+  text-align: center; }
+.BuyRam__description {
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: left; }
+
+.BuyRam__InputWrapper {
+  display: block;
+  width: 100%;
+  text-align: left; }
+
+.BuyRam__Input {
+  width: 50%;
+  border-bottom: 1px solid #2B3338 !important;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 4px;
+  text-align: right; }
+
+.BuyRam__InputDescription {
+  margin-left: 4px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: bottom; }
+
+.BuyRam__advancedOption {
+  margin-top: 2px;
+  text-align: right;
+  text-decoration: underline;
+  color: #5670B0;
+  cursor: pointer; }
+
+.BuyRam__buyButton {
+  margin: 10px auto;
+  display: block;
+  width: 50%; }
+
+.BuyRam__expectedPrice {
+  color: grey;
+  font-size: 10px;
+  width: 50%;
+  text-align: right; }
+
+.BuyRam__ramPrice {
+  text-align: left;
+  font-size: 10px;
+  color: grey; }
+.SellRam__description {
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: left; }
+
+.SellRam__InputWrapper {
+  display: block;
+  width: 100%;
+  text-align: left; }
+
+.SellRam__Input {
+  width: 50%;
+  border-bottom: 1px solid #2B3338 !important;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 4px;
+  text-align: right; }
+
+.SellRam__InputDescription {
+  margin-left: 4px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: bottom; }
+
+.SellRam__advancedOption {
+  margin-top: 2px;
+  text-align: right;
+  text-decoration: underline;
+  color: #5670B0;
+  cursor: pointer; }
+
+.SellRam__sellButton {
+  margin: 10px auto;
+  display: block;
+  width: 50%; }
+
+.SellRam__expectedPrice {
+  color: grey;
+  font-size: 10px;
+  width: 50%;
+  text-align: right; }
+
+.SellRam__ramPrice {
+  text-align: left;
+  font-size: 10px;
+  color: grey; }
+.RamTrade {
+  font-family: 'Montserrat'; }
+.ResourceDetail {
+  margin-top: 30px; }
+
+.ResourceDetail__title {
+  font-size: 20px;
+  margin-bottom: 6px; }
+
+.ResourceDetail__hr {
+  margin: 20px 0;
+  border-top: 0; }
+
+.ResourceDetail__questionMark {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 2px;
+  vertical-align: middle; }
+.LendRam__description {
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: left; }
+
+.LendRam__InputWrapper {
+  display: block;
+  width: 100%;
+  text-align: left; }
+
+.LendRam__Input {
+  width: 50%;
+  border-bottom: 1px solid #2B3338 !important;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 4px;
+  text-align: right; }
+
+.LendRam__InputDescription {
+  margin-left: 4px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: bottom; }
+
+.LendRam__advancedOption {
+  margin-top: 2px;
+  text-align: right;
+  text-decoration: underline;
+  color: #5670B0;
+  cursor: pointer; }
+
+.LendRam__lendButton {
+  margin: 10px auto;
+  display: block;
+  width: 50%; }
+
+.LendRam__expectedPrice {
+  color: grey;
+  font-size: 10px;
+  width: 50%;
+  text-align: right; }
+.Settings {
+  position: relative;
+  padding: 30px; }
+
+.Settings__closeButton {
+  position: absolute;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  background-color: transparent; }
+  .Settings__closeButton:hover {
+    background-color: transparent; }
+  .Settings__closeButton::before {
+    content: '';
+    transform: rotate(45deg);
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -2px;
+    background: #000; }
+  .Settings__closeButton::after {
+    content: '';
+    transform: rotate(-45deg);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background: #000;
+    height: 4px;
+    margin-top: -2px; }
+.NetworkSetting {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.NetworkSetting__title {
+  font-size: 20px;
+  margin-bottom: 6px; }
+
+.NetworkSetting__input {
+  border-bottom: 1px solid #2B3338;
+  display: inline-block; }
+
+.NetworkSetting__button {
+  margin-left: 10px;
+  display: inline-block; }
+
+.NetworkSetting__errorMessage {
+  font-size: 8px;
+  color: #D28B7B; }
+.LanguageSetting {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.LanguageSetting__title {
+  font-size: 20px;
+  margin-bottom: 6px; }
+
+.LanguageSetting__input {
+  border-bottom: 1px solid #2B3338;
+  display: inline-block; }
+
+.LanguageSetting__button {
+  margin-left: 10px;
+  display: inline-block; }
+
+.LanguageSetting__errorMessage {
+  font-size: 8px;
+  color: #D28B7B; }
+
+.LanguageSetting__Dropdown {
+  width: 100%;
+  color: #5670B0;
+  border-radius: 0; }
+  .LanguageSetting__Dropdown:hover {
+    color: #FFFFFF; }
+    .LanguageSetting__Dropdown:hover .Dropdown__currentItem {
+      color: #FFFFFF; }
+  .LanguageSetting__Dropdown .Dropdown__currentItem {
+    color: #5670B0; }
+  .LanguageSetting__Dropdown .Dropdown__menu {
+    width: 100%;
+    border: 1px solid #5670B0;
+    border-color: #5670B0;
+    background-color: #FFFFFF;
+    top: 32px;
+    left: 0;
+    color: #5670B0; }
+  .LanguageSetting__Dropdown .Dropdown__menuItem {
+    font-size: 12px;
+    padding: 12px;
+    color: #5670B0;
+    border-bottom: 1px solid #5670B0;
+    transition: background-color 300ms; }
+    .LanguageSetting__Dropdown .Dropdown__menuItem:hover {
+      background-color: #5670B0;
+      color: #FFFFFF; }
+    .LanguageSetting__Dropdown .Dropdown__menuItem:last-of-type {
+      border-bottom: 0; }
+.Popup {
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  min-height: 540px;
+  animation: openPopup 300ms; }
+
+.Popup__content {
+  position: absolute;
+  padding: 30px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  overflow: scroll; }
+
+@keyframes openPopup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10rem, 0);
+    transform: translate3d(0, -10rem, 0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); } }
+
+.Popup__closeButton {
+  position: absolute;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  top: 30px;
+  right: 30px;
+  cursor: pointer; }
+  .Popup__closeButton::before {
+    content: '';
+    transform: rotate(45deg);
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -2px;
+    background: #000; }
+  .Popup__closeButton::after {
+    content: '';
+    transform: rotate(-45deg);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background: #000;
+    height: 4px;
+    margin-top: -2px; }
+.Landing {
+  text-align: center;
+  width: 100%;
+  padding-top: 70px; }
+  .Landing .Landing__logo {
+    width: 150px; }
+  .Landing .logo-title {
+    line-height: 40px;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 15px; }
+.header-box {
+  width: 360px;
+  height: 60px;
+  position: relative;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header-box .icon-back, .header-box .icon-logo, .header-box .icon-setting, .header-box .icon-add {
+    display: inline-block;
+    background-size: cover;
+    cursor: pointer; }
+  .header-box .icon-back {
+    width: 12px;
+    height: 19.2px;
+    background-image: url("/static/images/arrow-left.png");
+    opacity: 0.5;
+    transition: .5s opacity; }
+    .header-box .icon-back:hover {
+      opacity: 1; }
+  .header-box .icon-logo {
+    width: 24px;
+    height: 27.2px;
+    background-image: url("/static/images/logo.png");
+    cursor: default; }
+  .header-box .icon-setting {
+    width: 24px;
+    height: 25.6px;
+    background-image: url("/static/images/setting.png"); }
+  .header-box .icon-add {
+    width: 24px;
+    height: 24px;
+    background-image: url("/static/images/icon-add.png"); }
+  .header-box .title {
+    font-size: 18px;
+    color: #999999; }
+  .header-box .add-account {
+    position: relative;
+    display: inline-block;
+    color: #1E64E2;
+    border: 1px solid;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 300ms, color 300ms; }
+    .header-box .add-account span {
+      display: block; }
+      .header-box .add-account span:hover {
+        background-color: #1E64E2;
+        color: #FFFFFF; }
+    .header-box .add-account::before {
+      position: absolute;
+      content: ' ';
+      width: 100%;
+      height: 10px;
+      background-color: transparent;
+      bottom: -10px;
+      left: 0; }
+  .header-box .account_type_menu {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 2;
+    width: 100px;
+    right: 0;
+    top: 25px;
+    background-color: #ffffff;
+    padding: 0 10px;
+    color: #666666;
+    display: none; }
+    .header-box .account_type_menu li {
+      padding: 3px 0; }
+      .header-box .account_type_menu li:first-child {
+        border-bottom: 1px solid #ccc; }
+      .header-box .account_type_menu li:hover {
+        color: #1E64E2; }
+    .header-box .account_type_menu:before {
+      position: absolute;
+      content: ' ';
+      border-top: 6px solid #ccc;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid #ccc;
+      right: 20px;
+      top: -6px;
+      transform: rotate(45deg); }
+    .header-box .account_type_menu:after {
+      position: absolute;
+      content: ' ';
+      border-top: 6px solid white;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid white;
+      right: 20px;
+      top: -5px;
+      transform: rotate(45deg); }
+.toast {
+  position: fixed;
+  z-index: 99900;
+  top: 65px;
+  left: 50%; }
+
+.toast-notice {
+  position: relative;
+  right: 50%; }
+
+.toast-notice-close {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer; }
+  .toast-notice-close:after {
+    content: '\D7';
+    color: black;
+    width: 100%; }
+
+.toast-text {
+  min-width: 300px;
+  display: inline-block;
+  margin: auto 0px;
+  border-radius: 4px;
+  color: #333333;
+  background-color: #EFEFEF;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.18;
+  padding: 18px 20px;
+  text-align: center;
+  box-sizing: border-box; }
+  .toast-text .toast-icon {
+    border-radius: 14px;
+    padding: 15px; }
+    .toast-text .toast-icon .toast-text-info {
+      margin-top: 12px; }
+  .toast-text a {
+    text-decoration: none;
+    color: #2bffee; }
+
+.icon {
+  fill: currentColor;
+  background-size: cover;
+  width: 44px;
+  height: 44px; }
+
+.success {
+  background-color: #98CB98; }
+.login-box {
+  width: 320px;
+  margin: 100px auto 0;
+  text-align: center; }
+  .login-box .input-password {
+    padding: 0 15px;
+    margin-bottom: 15px;
+    background-color: #F6F6F6; }
+  .login-box .line {
+    width: 100%;
+    height: 1px;
+    background-color: #979797;
+    margin: 5px 0 20px; }
+  .login-box .login-errorMessage {
+    font-size: 10px;
+    color: #D28B7B;
+    margin: 4px;
+    text-align: left; }
+  .login-box .btn-accountCreate {
+    margin-bottom: 15px; }
+    .login-box .btn-accountCreate:disabled {
+      cursor: not-allowed;
+      background-color: #F6F6F6;
+      color: #B5B5B5; }
+  .login-box .btn-accountImport {
+    background-color: transparent;
+    color: black;
+    border: 1px solid #000000; }
+    .login-box .btn-accountImport:hover {
+      background-color: #000000;
+      color: #FFFFFF; }
+  .login-box .third-create {
+    display: inline-block;
+    padding: 10px 0; }
+  .login-box .radio-box {
+    width: 300px;
+    display: flex;
+    align-items: end;
+    margin: 0 0 0 10px; }
+    .login-box .radio-box > i {
+      display: inline-block;
+      margin-right: 5px;
+      margin-top: 1px;
+      width: 14px;
+      height: 14px;
+      background-size: 10px 8px;
+      background-repeat: no-repeat;
+      border: 1px solid blue;
+      border-radius: 2px;
+      background-image: url("/static/images/icon-checked.png");
+      background-position: center center;
+      cursor: pointer;
+      background-clip: content-box; }
+      .login-box .radio-box > i.noChecked {
+        background-image: none;
+        border: 1px solid #B5B5B5; }
+    .login-box .radio-box > span {
+      color: #B5B5B5;
+      text-align: left; }
+.modal-wrapper {
+  position: relative;
+  width: 644px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 14px; }
+  .modal-wrapper .content-box {
+    line-height: 1.4; }
+    .modal-wrapper .content-box .title {
+      font-size: 16px;
+      text-align: center;
+      font-weight: bold;
+      color: #333333;
+      margin: 0; }
+  .modal-wrapper .icon-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    background-image: url("/static/images/icon-close.png");
+    background-size: cover;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: center center; }
+    .modal-wrapper .icon-close:active {
+      opacity: 0.9; }
+  .modal-wrapper p {
+    margin-bottom: 5px; }
+
+.delete-wrapper {
+  background-color: #FFFFFF;
+  height: 214px;
+  border-radius: 4px; }
+  .delete-wrapper .delete-container {
+    width: 300px;
+    padding: 18px 20px 0;
+    color: #333333; }
+    .delete-wrapper .delete-container .confirmDelTip {
+      font-size: 13px;
+      font-weight: 300; }
+    .delete-wrapper .delete-container .btn-confirm {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 250px; }
+.account-currentName-box .circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #E28A1E;
+  margin-right: 8px; }
+  .account-currentName-box .circle.test {
+    background-color: #1AA757; }
+  .account-currentName-box .circle.local {
+    background-color: #1E64E2; }
+
+.account-currentName-box .account-name {
+  font-size: 14px;
+  flex: 1;
+  cursor: pointer; }
+
+.account-currentName-box .arrow {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 8px;
+  cursor: pointer;
+  margin-left: 8px; }
+  .account-currentName-box .arrow.arrow-hide {
+    display: none; }
+  .account-currentName-box .arrow:before {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 1px solid #999999; }
+  .account-currentName-box .arrow.arrow-down:before {
+    transform: translateY(-4px) rotateZ(45deg);
+    border-top-color: transparent;
+    border-left-color: transparent; }
+  .account-currentName-box .arrow.arrow-right:before {
+    transform: translateY(-1px) rotateZ(45deg);
+    border-bottom-color: transparent;
+    border-left-color: transparent; }
+
+.account-box {
+  position: relative;
+  text-align: center;
+  background-color: #F6F6F6;
+  height: 540px;
+  padding: 0 20px;
+  overflow: hidden; }
+  .account-box .nameList-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    border-radius: 4px;
+    background-color: #F6F6F6;
+    overflow: hidden;
+    height: 0;
+    border: none;
+    transition: height 2s; }
+    .account-box .nameList-box.show {
+      height: auto;
+      border: 1px solid #C4C4C4; }
+    .account-box .nameList-box .accountName-list {
+      max-height: 300px;
+      overflow: scroll; }
+      .account-box .nameList-box .accountName-list li {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 25px;
+        cursor: pointer; }
+        .account-box .nameList-box .accountName-list li:hover {
+          background-color: #FFFFFF; }
+        .account-box .nameList-box .accountName-list li .account-title {
+          text-align: center;
+          width: 60px;
+          height: 20px;
+          line-height: 20px;
+          color: #FFFFFF;
+          background-color: #E28A1E; }
+          .account-box .nameList-box .accountName-list li .account-title.test {
+            background-color: #1AA757; }
+          .account-box .nameList-box .accountName-list li .account-title.local {
+            background-color: #1E64E2; }
+        .account-box .nameList-box .accountName-list li .circle {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #E28A1E; }
+          .account-box .nameList-box .accountName-list li .circle.test {
+            background-color: #1AA757; }
+        .account-box .nameList-box .accountName-list li .account-name {
+          font-size: 14px;
+          flex: 1; }
+        .account-box .nameList-box .accountName-list li .check {
+          display: inline-block;
+          width: 10px;
+          height: 8px; }
+          .account-box .nameList-box .accountName-list li .check.checked {
+            background-image: url("/static/images/icon-nameChecked.png");
+            background-size: cover; }
+  .account-box .btn-box {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+    .account-box .btn-box.active {
+      display: flex; }
+    .account-box .btn-box > button:hover {
+      background-color: #000000;
+      color: #FFFFFF; }
+    .account-box .btn-box a {
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      outline: 0;
+      text-align: center;
+      transition: background-color 300ms, color 300ms;
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #FFFFFF;
+      color: #000000;
+      border: 1px solid;
+      text-decoration: none; }
+      .account-box .btn-box a:hover {
+        background-color: #000000;
+        color: #FFFFFF; }
+    .account-box .btn-box .btn-receipt {
+      margin-left: 20px; }
+  .account-box .dealRecord-box {
+    margin-top: 25px;
+    display: none; }
+    .account-box .dealRecord-box .title-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .account-box .dealRecord-box .title-box .line {
+        width: 100px;
+        height: 1px;
+        background-color: #D8D8D8; }
+      .account-box .dealRecord-box .title-box .title {
+        color: #666666;
+        font-size: 16px; }
+    .account-box .dealRecord-box .list-box {
+      font-size: 14px;
+      overflow: scroll;
+      height: 203px; }
+      .account-box .dealRecord-box .list-box .item-box {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #D8D8D8;
+        padding: 10px 0; }
+        .account-box .dealRecord-box .list-box .item-box:last-child {
+          border: none; }
+        .account-box .dealRecord-box .list-box .item-box .left, .account-box .dealRecord-box .list-box .item-box .right {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column; }
+        .account-box .dealRecord-box .list-box .item-box .left {
+          text-align: left; }
+          .account-box .dealRecord-box .list-box .item-box .left .time {
+            color: #999999; }
+        .account-box .dealRecord-box .list-box .item-box .right {
+          text-align: right; }
+          .account-box .dealRecord-box .list-box .item-box .right .status {
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #FFFFFF;
+            text-align: center;
+            align-self: flex-end;
+            margin-bottom: 7px; }
+            .account-box .dealRecord-box .list-box .item-box .right .status.confirmed {
+              background-color: #1AA757; }
+            .account-box .dealRecord-box .list-box .item-box .right .status.notApproved {
+              background-color: #8E8E8E; }
+            .account-box .dealRecord-box .list-box .item-box .right .status.failure {
+              background-color: #DE5151; }
+.accountImport-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  text-align: center; }
+  .accountImport-box .privateKey-content {
+    margin-top: 30px;
+    width: 300px;
+    height: 150px;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    resize: none;
+    padding: 5px; }
+  .accountImport-box .input-accountName {
+    margin-top: 30px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    resize: none;
+    padding: 5px; }
+  .accountImport-box .accountNameText {
+    width: 300px;
+    resize: none;
+    display: block;
+    padding: 5px 5px 0px 5px;
+    margin: 10px auto 0px auto;
+    color: #999; }
+  .accountImport-box .btn-submit {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+.accountManage-box {
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+  height: 540px;
+  background-color: #F6F6F6;
+  text-align: center;
+  overflow: scroll; }
+  .accountManage-box .account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding: 0 20px;
+    border-bottom: 1px solid #eee; }
+    .accountManage-box .account-item .left span {
+      display: inline-block;
+      height: 20px;
+      line-height: 20px; }
+    .accountManage-box .account-item .left .account-name-box {
+      text-align: left; }
+      .accountManage-box .account-item .left .account-name-box .account-title {
+        text-align: center;
+        width: 70px;
+        height: 20px;
+        line-height: 20px;
+        color: #FFFFFF;
+        background-color: #E28A1E; }
+        .accountManage-box .account-item .left .account-name-box .account-title.test {
+          background-color: #1AA757; }
+        .accountManage-box .account-item .left .account-name-box .account-title.local {
+          background-color: #1E64E2; }
+      .accountManage-box .account-item .left .account-name-box .account-name {
+        margin-left: 15px; }
+    .accountManage-box .account-item .left .publicKey-box {
+      display: flex;
+      align-self: center;
+      text-align: left;
+      margin-top: 10px; }
+      .accountManage-box .account-item .left .publicKey-box .publicKey-title {
+        text-align: center;
+        width: 70px;
+        height: 20px;
+        line-height: 20px;
+        color: #FFFFFF;
+        background-color: #B9B9B9; }
+      .accountManage-box .account-item .left .publicKey-box .publicKey-name {
+        margin-left: 15px;
+        display: flex;
+        align-items: center; }
+        .accountManage-box .account-item .left .publicKey-box .publicKey-name .truncate {
+          max-width: 200px !important;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .accountManage-box .account-item .left .publicKey-box .publicKey-name .copy {
+          display: inline-block;
+          margin-left: 5px;
+          width: 15px;
+          height: 19px;
+          background-image: url("/static/images/copy.png");
+          background-size: cover;
+          cursor: pointer; }
+    .accountManage-box .account-item .right {
+      width: 20px;
+      height: 22px;
+      background-image: url("/static/images/delete.png");
+      background-size: cover;
+      cursor: pointer; }
+.developerMode-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding-top: 40px; }
+  .developerMode-box ul {
+    padding: 0; }
+    .developerMode-box ul li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: 80px;
+      padding-left: 40px;
+      cursor: pointer; }
+      .developerMode-box ul li:hover {
+        background-color: #FFFFFF; }
+      .developerMode-box ul li .slider {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        margin-left: 10px;
+        height: 26px;
+        width: 48px;
+        float: right;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px; }
+      .developerMode-box ul li .slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 50%; }
+      .developerMode-box ul li .enabled .slider {
+        background-color: #2196F3;
+        box-shadow: 0 0 1px #2196F3; }
+      .developerMode-box ul li .enabled .slider:before {
+        -webkit-transform: translateX(22px);
+        -ms-transform: translateX(22px);
+        transform: translateX(22px); }
+      .developerMode-box ul li .name {
+        font-size: 18px;
+        color: #333333; }
+.TokenBalance-box {
+  display: inline-block;
+  text-align: center;
+  min-height: 169px;
+  text-decoration: none;
+  width: 100%; }
+  .TokenBalance-box .logo-box {
+    margin-top: 30px; }
+    .TokenBalance-box .logo-box .logo {
+      width: 72px; }
+  .TokenBalance-box .TokenBalance-amount-box {
+    margin: 15px 0 20px;
+    font-size: 16px; }
+  .TokenBalance-box .TokenBalance__amount {
+    font-size: 22px;
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: none; }
+  .TokenBalance-box .TokenBalance__symbol {
+    display: inline-block;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: none; }
+  .TokenBalance-box .TokenBalance__frozenBalance {
+    display: inline-block;
+    margin-left: 2px;
+    color: #7AA2BC;
+    font-size: 14px; }
+  .TokenBalance-box .TokenBalance__resources {
+    font-size: 14px;
+    font-weight: 300; }
+    .TokenBalance-box .TokenBalance__resources .TokenBalance__ram {
+      display: inline-block;
+      margin-left: 10px;
+      cursor: pointer; }
+    .TokenBalance-box .TokenBalance__resources .TokenBalance__gas {
+      cursor: pointer; }
+    .TokenBalance-box .TokenBalance__resources .TokenBalance__resources_manage {
+      margin-top: 10px; }
+      .TokenBalance-box .TokenBalance__resources .TokenBalance__resources_manage a {
+        font-size: 13px;
+        cursor: pointer;
+        text-decoration: underline; }
+        .TokenBalance-box .TokenBalance__resources .TokenBalance__resources_manage a:first-child {
+          margin-right: 12px; }
+  .TokenBalance-box .progress-wrapper {
+    display: flex;
+    justify-content: space-between; }
+    .TokenBalance-box .progress-wrapper .progress-box {
+      width: 155px;
+      height: 64px;
+      padding: 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+      background-color: #FFFFFF;
+      border-radius: 4px;
+      font-weight: 400; }
+      .TokenBalance-box .progress-wrapper .progress-box .ram-default {
+        font-size: 14px;
+        line-height: 14px;
+        display: flex;
+        justify-content: space-between; }
+      .TokenBalance-box .progress-wrapper .progress-box .ram-used {
+        font-size: 12px;
+        line-height: 12px;
+        display: flex;
+        justify-content: space-between; }
+      .TokenBalance-box .progress-wrapper .progress-box .percent {
+        color: #1E64E2; }
+      .TokenBalance-box .progress-wrapper .progress-box .progress-wrap {
+        margin: 10px 0 5px;
+        background-color: #DCE6F2;
+        border-radius: 5px; }
+        .TokenBalance-box .progress-wrapper .progress-box .progress-wrap .progress-inner {
+          border-radius: 5px;
+          background-color: #6598F4;
+          height: 10px;
+          transition: width 1s; }
+  .TokenBalance-box .coin-list-wrapper {
+    overflow-y: auto;
+    height: 200px;
+    margin-top: 10px; }
+    .TokenBalance-box .coin-list-wrapper .coin-box {
+      margin-bottom: 10px;
+      height: 60px;
+      padding: 10px 15px;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+      background-color: #FFFFFF;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 400; }
+      .TokenBalance-box .coin-list-wrapper .coin-box .img-name {
+        display: flex;
+        align-items: center; }
+        .TokenBalance-box .coin-list-wrapper .coin-box .img-name .coin-img {
+          width: 40px;
+          height: 40px;
+          margin-right: 10px; }
+    .TokenBalance-box .coin-list-wrapper .add-token {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
+      .TokenBalance-box .coin-list-wrapper .add-token i {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+        background-image: url("/static/images/icon-add.png");
+        margin-right: 5px; }
+.success-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 30px; }
+  .success-box .success-logo-box {
+    margin-bottom: 20px; }
+    .success-box .success-logo-box .success-logo {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-image: url("/static/images/icon-success.png");
+      background-size: contain;
+      margin-bottom: 10px; }
+    .success-box .success-logo-box .success-result {
+      color: #1AA757;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 300; }
+  .success-box .item-box {
+    text-align: left;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 15px; }
+    .success-box .item-box .item-title {
+      display: flex;
+      font-weight: bold;
+      margin-bottom: 10px;
+      line-height: 16px; }
+    .success-box .item-box .item-content {
+      width: 300px;
+      border: 1px solid #C4C4C4;
+      border-radius: 4px;
+      padding: 0 15px; }
+      .success-box .item-box .item-content.item-txHash {
+        height: 60px;
+        line-height: 24px;
+        padding-top: 6px; }
+      .success-box .item-box .item-content.item-gasUsage {
+        height: 40px;
+        line-height: 40px; }
+  .success-box .btn-close {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 30px; }
+.failed-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 30px; }
+  .failed-box .failed-logo-box {
+    margin-bottom: 20px; }
+    .failed-box .failed-logo-box .failed-logo {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+      border-radius: 50%;
+      background-image: linear-gradient(#F17575, #AD1515);
+      color: #FFFFFF;
+      font-size: 65px;
+      font-style: normal;
+      font-weight: bold;
+      font-family: serif;
+      margin-bottom: 10px; }
+    .failed-box .failed-logo-box .failed-result {
+      color: #F17575;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 300; }
+  .failed-box .item-box {
+    text-align: left;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 15px; }
+    .failed-box .item-box:last-of-type {
+      margin-bottom: 20px; }
+    .failed-box .item-box .item-title {
+      display: flex;
+      font-weight: bold;
+      margin-bottom: 10px;
+      line-height: 16px; }
+      .failed-box .item-box .item-title .copy {
+        display: inline-block;
+        width: 13px;
+        height: 16px;
+        background-image: url("/static/images/copy.png");
+        background-size: contain;
+        cursor: pointer;
+        margin-left: 5px; }
+    .failed-box .item-box .item-content {
+      width: 300px;
+      border: 1px solid #C4C4C4;
+      border-radius: 4px;
+      padding: 0 15px; }
+      .failed-box .item-box .item-content.item-txHash {
+        height: 60px;
+        line-height: 24px;
+        padding-top: 6px; }
+      .failed-box .item-box .item-content.item-gasUsage {
+        height: 40px;
+        line-height: 40px; }
+      .failed-box .item-box .item-content.item-errorMessage {
+        height: 70px;
+        line-height: 24px;
+        overflow-y: auto;
+        color: #F17575; }
+.tokenTransfer-box {
+  position: relative;
+  background-color: #F6F6F6;
+  height: 540px;
+  padding: 20px 30px 0; }
+  .tokenTransfer-box .transferAmount-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px; }
+    .tokenTransfer-box .transferAmount-box .balance {
+      color: #1E64E2;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 12px; }
+    .tokenTransfer-box .transferAmount-box .iGAS-price {
+      color: #333333; }
+      .tokenTransfer-box .transferAmount-box .iGAS-price > i {
+        display: inline-block;
+        width: 7px;
+        height: 13px;
+        background-image: url("/static/images/arrow-right.png");
+        background-size: cover;
+        vertical-align: middle; }
+  .tokenTransfer-box .label {
+    font-size: 14px; }
+  .tokenTransfer-box .input {
+    padding-left: 15px;
+    margin: 8px 0 10px; }
+    .tokenTransfer-box .input.iGASLimit {
+      margin: 0; }
+  .tokenTransfer-box .btn-box {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 300px; }
+    .tokenTransfer-box .btn-box .btn-submit {
+      cursor: pointer;
+      width: 100%;
+      margin: 12px 0 5px;
+      font-size: 18px; }
+    .tokenTransfer-box .btn-box .transferTips {
+      color: #999999; }
+  .tokenTransfer-box .choose-token-box {
+    position: relative; }
+    .tokenTransfer-box .choose-token-box .token-list {
+      display: flex;
+      position: absolute;
+      z-index: -1;
+      top: 68px;
+      flex-direction: column;
+      width: 100%;
+      height: 0;
+      overflow-y: auto;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+      background-color: #FFFFFF;
+      border-radius: 4px;
+      transition: 0.3s height; }
+      .tokenTransfer-box .choose-token-box .token-list.active {
+        height: 160px;
+        z-index: 1; }
+      .tokenTransfer-box .choose-token-box .token-list > li {
+        font-size: 16px;
+        cursor: pointer;
+        color: #B5B5B5;
+        font-weight: 300; }
+        .tokenTransfer-box .choose-token-box .token-list > li:hover {
+          background-color: rgba(0, 0, 0, 0.05); }
+        .tokenTransfer-box .choose-token-box .token-list > li .token-item {
+          display: inline-block;
+          width: 100%;
+          height: 40px;
+          padding: 9px 15px; }
+    .tokenTransfer-box .choose-token-box .icon-arrow {
+      position: absolute;
+      right: 10px;
+      width: 16px;
+      height: 15px;
+      top: 38px;
+      transform: rotateZ(-90deg);
+      background-image: url("/static/images/arrow-left.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: 0.3s transform; }
+      .tokenTransfer-box .choose-token-box .icon-arrow.active {
+        top: 44px;
+        transform: rotateZ(90deg); }
+
+.TokenTransfer__errorMessage {
+  margin-top: 4px;
+  color: #D28B7B;
+  font-size: 8px; }
+.accountQRCode-box {
+  text-align: center;
+  background-color: #F6F6F6;
+  height: 540px;
+  padding: 40px 30px 0; }
+  .accountQRCode-box .qrTitle {
+    font-size: 20px;
+    color: #666666;
+    margin-bottom: 10px; }
+  .accountQRCode-box .name {
+    font-size: 20px;
+    color: #333333;
+    margin: 25px 0 10px; }
+  .accountQRCode-box .receiptTips {
+    text-align: left;
+    margin-top: 10px;
+    color: #999999; }
+.accountCreateStep1-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding: 20px 30px 0; }
+  .accountCreateStep1-box .title {
+    font-size: 16px; }
+  .accountCreateStep1-box .rule {
+    color: #999999;
+    margin-top: 5px; }
+  .accountCreateStep1-box .accountName-box {
+    position: relative;
+    margin: 10px 0; }
+    .accountCreateStep1-box .accountName-box .input-accountName {
+      padding: 0 15px; }
+    .accountCreateStep1-box .accountName-box .illegal {
+      position: absolute;
+      right: 10px;
+      top: 7px;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: #F17575;
+      color: #FFFFFF;
+      font-style: normal;
+      line-height: 25px;
+      text-align: center; }
+  .accountCreateStep1-box .btn-nextStep {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+    .accountCreateStep1-box .btn-nextStep:disabled {
+      cursor: not-allowed;
+      background-color: #F6F6F6;
+      color: #B5B5B5;
+      border: 1px solid #999999; }
+.accountCreateStep2-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding: 20px 30px 0; }
+  .accountCreateStep2-box .title {
+    font-size: 16px; }
+  .accountCreateStep2-box .rule {
+    color: #999999;
+    margin-top: 5px; }
+  .accountCreateStep2-box .label {
+    display: inline-block;
+    margin: 8px 0; }
+  .accountCreateStep2-box .key-box {
+    position: relative; }
+    .accountCreateStep2-box .key-box .input-key {
+      position: relative;
+      padding: 0 27px 0 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .accountCreateStep2-box .key-box .copy {
+      position: absolute;
+      right: 10px;
+      top: 11px;
+      display: inline-block;
+      width: 15px;
+      height: 19px;
+      background-image: url("/static/images/copy.png");
+      background-size: cover;
+      cursor: pointer; }
+  .accountCreateStep2-box .btn-box {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center; }
+    .accountCreateStep2-box .btn-box .btn-replaceKeyPair {
+      background-color: #FFFFFF;
+      color: #000000;
+      border: 1px solid;
+      margin-bottom: 10px; }
+      .accountCreateStep2-box .btn-box .btn-replaceKeyPair:hover {
+        background-color: #000000;
+        color: #FFFFFF; }
+.accountCreate-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding: 20px 30px 0; }
+  .accountCreate-box .title {
+    font-size: 16px; }
+  .accountCreate-box .rule {
+    color: #999999;
+    margin-top: 5px; }
+  .accountCreate-box .label {
+    display: inline-block;
+    margin: 8px 0; }
+  .accountCreate-box .key-box {
+    position: relative; }
+    .accountCreate-box .key-box .input-key {
+      position: relative;
+      padding: 0 27px 0 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    .accountCreate-box .key-box .copy {
+      position: absolute;
+      right: 10px;
+      top: 11px;
+      display: inline-block;
+      width: 15px;
+      height: 19px;
+      background-image: url("/static/images/copy.png");
+      background-size: cover;
+      cursor: pointer; }
+  .accountCreate-box .btn-checkCreate {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+.accountSetting-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding-top: 40px; }
+  .accountSetting-box ul {
+    padding: 0;
+    height: 480px;
+    overflow-y: auto; }
+    .accountSetting-box ul li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: 80px;
+      padding-left: 40px;
+      cursor: pointer; }
+      .accountSetting-box ul li:hover {
+        background-color: #FFFFFF; }
+      .accountSetting-box ul li > i {
+        display: inline-block;
+        width: 20px;
+        background-size: cover;
+        margin-right: 20px; }
+        .accountSetting-box ul li > i.accountManage {
+          height: 16px;
+          background-image: url("/static/images/icon-accountManage.png"); }
+        .accountSetting-box ul li > i.changeLanguage {
+          height: 16px;
+          background-image: url("/static/images/icon-changeLanguage.png"); }
+        .accountSetting-box ul li > i.changePwd {
+          height: 20px;
+          background-image: url("/static/images/icon-changePwd.png"); }
+        .accountSetting-box ul li > i.lock {
+          height: 20px;
+          background-image: url("/static/images/icon-lock.png"); }
+        .accountSetting-box ul li > i.whitelist {
+          height: 20px;
+          background-image: url("/static/images/icon-whitelist.png"); }
+        .accountSetting-box ul li > i.iostWallet {
+          height: 15.2px;
+          background-image: url("/static/images/icon-iostWallet.png"); }
+      .accountSetting-box ul li .name {
+        font-size: 18px;
+        color: #333333; }
+.changePwd-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding: 46px 30px 0; }
+  .changePwd-box .input-pwd {
+    margin-bottom: 10px;
+    padding: 0 15px; }
+  .changePwd-box .approved {
+    font-size: 14px;
+    color: #1AA757;
+    margin-bottom: 15px;
+    font-weight: 300; }
+  .changePwd-box .btn-setting {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+  .changePwd-box .verify-error {
+    font-size: 14px;
+    color: red;
+    font-weight: 300; }
+.lock-box {
+  height: 175px;
+  margin: 180px auto 0;
+  text-align: center;
+  background-color: #F6F6F6;
+  padding-top: 30px; }
+  .lock-box .input-password {
+    padding: 0 15px;
+    margin-bottom: 15px; }
+.changeLanguage-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding-top: 40px; }
+  .changeLanguage-box ul {
+    padding: 0; }
+    .changeLanguage-box ul li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: 80px;
+      padding-left: 40px;
+      cursor: pointer; }
+      .changeLanguage-box ul li:hover {
+        background-color: #FFFFFF; }
+      .changeLanguage-box ul li > i {
+        display: inline-block;
+        width: 25px;
+        height: 17px;
+        background-size: cover;
+        margin-right: 20px; }
+        .changeLanguage-box ul li > i.china {
+          background-image: url("/static/images/flag-china.png"); }
+        .changeLanguage-box ul li > i.english {
+          background-image: url("/static/images/flag-english.png"); }
+        .changeLanguage-box ul li > i.korea {
+          background-image: url("/static/images/flag-korea.png"); }
+      .changeLanguage-box ul li .name {
+        font-size: 18px;
+        color: #333333; }
+.iostWallet-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding-top: 40px; }
+  .iostWallet-box ul {
+    padding: 0; }
+    .iostWallet-box ul li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      height: 80px;
+      padding-left: 40px;
+      cursor: pointer; }
+      .iostWallet-box ul li:hover {
+        background-color: #FFFFFF; }
+      .iostWallet-box ul li > i {
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        background-size: cover;
+        margin-right: 20px; }
+        .iostWallet-box ul li > i.nodeVoting {
+          background-image: url("/static/images/icon-accountManage.png"); }
+        .iostWallet-box ul li > i.userAgreement {
+          background-image: url("/static/images/icon-changeLanguage.png"); }
+        .iostWallet-box ul li > i.developerMode {
+          background-image: url("/static/images/icon-developerMode.png");
+          background-size: contain;
+          background-repeat: no-repeat; }
+      .iostWallet-box ul li .name {
+        font-size: 18px;
+        color: #333333; }
+.landing-color {
+  background-color: #F6F6F6;
+  padding-top: 50px; }
+
+.accountAdd-box {
+  text-align: center;
+  background-color: #F6F6F6;
+  padding: 200px 0 30px; }
+  .accountAdd-box .btn-accountCreate {
+    margin-bottom: 15px; }
+    .accountAdd-box .btn-accountCreate:disabled {
+      cursor: not-allowed;
+      background-color: #F6F6F6;
+      color: #B5B5B5;
+      border: 1px solid #999999; }
+  .accountAdd-box .btn-accountImport {
+    background-color: #FFFFFF;
+    color: black;
+    border: 1px solid #000000; }
+.userAgreement-box {
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  overflow: hidden;
+  padding: 10px 0; }
+  .userAgreement-box .userAgreement-wrapper {
+    background-color: #FFFFFF;
+    height: 520px;
+    overflow: auto;
+    padding: 10px; }
+    .userAgreement-box .userAgreement-wrapper p {
+      margin: 10px 0; }
+      .userAgreement-box .userAgreement-wrapper p.space {
+        padding-left: 20px; }
+    .userAgreement-box .userAgreement-wrapper h2 {
+      text-align: center; }
+    .userAgreement-box .userAgreement-wrapper h3 {
+      margin: 10px 0; }
+    .userAgreement-box .userAgreement-wrapper ul {
+      padding-left: 40px; }
+      .userAgreement-box .userAgreement-wrapper ul li {
+        list-style: disc; }
+.gasManage-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding: 15px;
+  overflow: auto; }
+  .gasManage-box .progress-box {
+    height: 80px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 15px; }
+    .gasManage-box .progress-box .ram-default {
+      font-size: 14px;
+      line-height: 14px;
+      display: flex;
+      justify-content: space-between; }
+    .gasManage-box .progress-box .ram-used {
+      font-size: 12px;
+      line-height: 12px;
+      display: flex;
+      justify-content: space-between; }
+    .gasManage-box .progress-box .progress-wrap {
+      margin: 10px 0 5px;
+      background-color: #DCE6F2;
+      border-radius: 5px; }
+      .gasManage-box .progress-box .progress-wrap .progress-inner {
+        border-radius: 5px;
+        background-color: #6598F4;
+        height: 10px; }
+
+.selling-gas {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px; }
+  .selling-gas span:last-child {
+    color: #1E64E2; }
+
+.gas-content-box {
+  position: relative;
+  margin-top: 15px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 15px; }
+  .gas-content-box .toggle-title {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold; }
+    .gas-content-box .toggle-title .toggle-buy, .gas-content-box .toggle-title .toggle-sell {
+      position: relative;
+      cursor: pointer; }
+      .gas-content-box .toggle-title .toggle-buy.active:before, .gas-content-box .toggle-title .toggle-sell.active:before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #6598F4; }
+    .gas-content-box .toggle-title .toggle-sell {
+      display: inline-block;
+      margin-left: 25px; }
+  .gas-content-box .toggle-box {
+    margin-top: 30px; }
+    .gas-content-box .toggle-box .buy-box, .gas-content-box .toggle-box .seal-box {
+      display: none; }
+      .gas-content-box .toggle-box .buy-box.active, .gas-content-box .toggle-box .seal-box.active {
+        display: block; }
+      .gas-content-box .toggle-box .buy-box .buy-title, .gas-content-box .toggle-box .seal-box .buy-title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        line-height: 13px;
+        font-weight: bold;
+        margin-bottom: 10px; }
+        .gas-content-box .toggle-box .buy-box .buy-title .buy-price, .gas-content-box .toggle-box .seal-box .buy-title .buy-price {
+          color: #1E64E2; }
+      .gas-content-box .toggle-box .buy-box .input-buyAmount, .gas-content-box .toggle-box .buy-box .input-address, .gas-content-box .toggle-box .seal-box .input-buyAmount, .gas-content-box .toggle-box .seal-box .input-address {
+        background-color: #F6F6F6;
+        padding-left: 15px;
+        margin-bottom: 10px; }
+      .gas-content-box .toggle-box .buy-box .equal-iost, .gas-content-box .toggle-box .seal-box .equal-iost {
+        margin-top: 5px;
+        text-align: right;
+        font-size: 14px;
+        line-height: 14px;
+        color: #333333; }
+      .gas-content-box .toggle-box .buy-box .address-title, .gas-content-box .toggle-box .seal-box .address-title {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: bold;
+        margin: 15px 0 10px; }
+
+.gas-btn-submit {
+  margin-top: 20px;
+  margin-bottom: 10px; }
+  .gas-btn-submit:disabled {
+    cursor: not-allowed; }
+
+.gas-records {
+  margin: 15px 0; }
+  .gas-records .title {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px; }
+    .gas-records .title:before {
+      content: '';
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      z-index: 1; }
+    .gas-records .title span {
+      padding: 0 5px;
+      position: relative;
+      z-index: 2;
+      background-color: #F6F6F6; }
+  .gas-records ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px; }
+.ramManage-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding: 15px; }
+  .ramManage-box .progress-box {
+    height: 80px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 15px; }
+    .ramManage-box .progress-box .ram-default {
+      font-size: 14px;
+      line-height: 14px;
+      display: flex;
+      justify-content: space-between; }
+    .ramManage-box .progress-box .ram-used {
+      font-size: 12px;
+      line-height: 12px;
+      display: flex;
+      justify-content: space-between; }
+    .ramManage-box .progress-box .progress-wrap {
+      margin: 10px 0 5px;
+      background-color: #DCE6F2;
+      border-radius: 5px; }
+      .ramManage-box .progress-box .progress-wrap .progress-inner {
+        border-radius: 5px;
+        background-color: #6598F4;
+        height: 10px;
+        transition: width 1s; }
+
+.content-box {
+  position: relative;
+  margin-top: 15px;
+  background-color: #FFFFFF;
+  height: 306px;
+  border-radius: 4px;
+  padding: 15px; }
+  .content-box .toggle-title {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold; }
+    .content-box .toggle-title .toggle-buy, .content-box .toggle-title .toggle-sell {
+      position: relative;
+      cursor: pointer; }
+      .content-box .toggle-title .toggle-buy.active:before, .content-box .toggle-title .toggle-sell.active:before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #6598F4; }
+    .content-box .toggle-title .toggle-sell {
+      display: inline-block;
+      margin-left: 25px; }
+  .content-box .toggle-box {
+    margin-top: 30px; }
+    .content-box .toggle-box .buy-box, .content-box .toggle-box .seal-box {
+      display: none; }
+      .content-box .toggle-box .buy-box.active, .content-box .toggle-box .seal-box.active {
+        display: block; }
+      .content-box .toggle-box .buy-box .buy-title, .content-box .toggle-box .seal-box .buy-title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        line-height: 13px;
+        font-weight: bold;
+        margin-bottom: 10px; }
+        .content-box .toggle-box .buy-box .buy-title .buy-price, .content-box .toggle-box .seal-box .buy-title .buy-price {
+          color: #1E64E2; }
+      .content-box .toggle-box .buy-box .input-buyAmount, .content-box .toggle-box .buy-box .input-address, .content-box .toggle-box .seal-box .input-buyAmount, .content-box .toggle-box .seal-box .input-address {
+        background-color: #F6F6F6;
+        padding-left: 15px; }
+      .content-box .toggle-box .buy-box .equal-iost, .content-box .toggle-box .seal-box .equal-iost {
+        margin-top: 5px;
+        text-align: right;
+        font-size: 14px;
+        line-height: 14px;
+        color: #333333; }
+      .content-box .toggle-box .buy-box .address-title, .content-box .toggle-box .seal-box .address-title {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: bold;
+        margin-bottom: 10px; }
+
+.ram-btn-submit {
+  position: absolute;
+  bottom: 20px; }
+  .ram-btn-submit:disabled {
+    cursor: not-allowed; }
+.TokenDetail-box {
+  display: inline-block;
+  background-color: #F6F6F6;
+  height: 540px;
+  padding: 0 20px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%; }
+  .TokenDetail-box .logo-box {
+    margin-top: 30px; }
+    .TokenDetail-box .logo-box .logo {
+      width: 72px; }
+  .TokenDetail-box .amount-box {
+    margin: 15px 0 40px;
+    font-size: 16px; }
+    .TokenDetail-box .amount-box > span {
+      display: inline-block;
+      font-size: 22px;
+      text-transform: uppercase; }
+      .TokenDetail-box .amount-box > span.amount {
+        margin-right: 5px; }
+  .TokenDetail-box .token-fullName, .TokenDetail-box .view-detail {
+    font-size: 14px;
+    line-height: 14px;
+    color: #666666;
+    font-weight: 300;
+    margin-bottom: 10px; }
+  .TokenDetail-box .view-detail {
+    display: inline-block;
+    margin-bottom: 30px; }
+  .TokenDetail-box .btn-box {
+    align-items: center;
+    justify-content: center;
+    display: flex; }
+    .TokenDetail-box .btn-box > button:hover {
+      background-color: #000000;
+      color: #FFFFFF; }
+    .TokenDetail-box .btn-box a {
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      outline: 0;
+      text-align: center;
+      transition: background-color 300ms, color 300ms;
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #FFFFFF;
+      color: #000000;
+      border: 1px solid;
+      text-decoration: none; }
+      .TokenDetail-box .btn-box a:hover {
+        background-color: #000000;
+        color: #FFFFFF; }
+    .TokenDetail-box .btn-box .btn-receipt {
+      margin-left: 20px; }
+.whitelist-box {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background-color: #F6F6F6;
+  padding-top: 40px; }
+  .whitelist-box ul {
+    padding: 0; }
+  .whitelist-box li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 60px;
+    padding: 0 20px;
+    cursor: pointer;
+    user-select: none; }
+    .whitelist-box li:hover {
+      background-color: #FFFFFF; }
+  .whitelist-box .item-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 22px;
+    background-image: url("/static/images/icon-user.png");
+    background-size: cover; }
+  .whitelist-box .domain-name {
+    flex: 1 1 auto;
+    font-size: 18px;
+    color: #333333; }
+  .whitelist-box .del-btn {
+    display: inline-block;
+    cursor: pointer; }
+    .whitelist-box .del-btn .del-icon {
+      display: inline-block;
+      width: 20px;
+      height: 22px;
+      background-image: url("/static/images/delete.png");
+      background-size: cover; }
+
+.x-nameList-box {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: #F6F6F6;
+  overflow: hidden;
+  height: 0;
+  border: none;
+  transition: height 2s;
+  z-index: 1; }
+  .x-nameList-box.show {
+    height: auto;
+    border: 1px solid #C4C4C4; }
+  .x-nameList-box .accountName-list {
+    max-height: 300px;
+    overflow: scroll; }
+    .x-nameList-box .accountName-list li {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding: 0 25px;
+      cursor: pointer; }
+      .x-nameList-box .accountName-list li:hover {
+        background-color: #FFFFFF; }
+      .x-nameList-box .accountName-list li .account-title {
+        margin-right: 10px;
+        text-align: center;
+        width: 50px;
+        height: 20px;
+        line-height: 20px;
+        color: #FFFFFF;
+        background-color: #E28A1E; }
+        .x-nameList-box .accountName-list li .account-title.test {
+          background-color: #1AA757; }
+      .x-nameList-box .accountName-list li .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #E28A1E; }
+        .x-nameList-box .accountName-list li .circle.test {
+          background-color: #1AA757; }
+      .x-nameList-box .accountName-list li .account-name {
+        font-size: 14px;
+        flex: 1; }
+      .x-nameList-box .accountName-list li .check {
+        margin-left: 10px;
+        display: inline-block;
+        width: 10px;
+        height: 8px; }
+        .x-nameList-box .accountName-list li .check.checked {
+          background-image: url("/static/images/icon-nameChecked.png");
+          background-size: cover; }
+
+.x-account-currentName-box {
+  position: absolute;
+  right: 20px; }
+  .x-account-currentName-box .circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #E28A1E;
+    margin-right: 8px; }
+    .x-account-currentName-box .circle.test {
+      background-color: #1AA757; }
+  .x-account-currentName-box .account-name {
+    font-size: 14px;
+    flex: 1;
+    cursor: pointer; }
+  .x-account-currentName-box .arrow {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    cursor: pointer;
+    margin-left: 8px; }
+    .x-account-currentName-box .arrow.arrow-hide {
+      display: none; }
+    .x-account-currentName-box .arrow:before {
+      position: absolute;
+      content: '';
+      width: 8px;
+      height: 8px;
+      border: 1px solid #999999; }
+    .x-account-currentName-box .arrow.arrow-down:before {
+      transform: translateY(-4px) rotateZ(45deg);
+      border-top-color: transparent;
+      border-left-color: transparent; }
+    .x-account-currentName-box .arrow.arrow-right:before {
+      transform: translateY(-1px) rotateZ(45deg);
+      border-bottom-color: transparent;
+      border-left-color: transparent; }
+.AssetManage-box {
+  display: inline-block;
+  background-color: #F6F6F6;
+  height: 540px;
+  padding: 20px 20px 0;
+  overflow: hidden;
+  width: 100%; }
+  .AssetManage-box .label {
+    font-size: 14px; }
+  .AssetManage-box .input-box {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 20px; }
+    .AssetManage-box .input-box .input {
+      padding-left: 15px; }
+    .AssetManage-box .input-box .btn-add {
+      width: 85px;
+      margin-left: 10px; }
+  .AssetManage-box .asset-title {
+    margin-bottom: 10px;
+    font-size: 14px; }
+  .AssetManage-box .token-list-wrapper {
+    overflow-y: auto;
+    height: 390px; }
+    .AssetManage-box .token-list-wrapper > li {
+      height: 65px;
+      border-bottom: 1px solid rgba(120, 120, 120, 0.1);
+      display: flex;
+      align-items: center; }
+      .AssetManage-box .token-list-wrapper > li:last-child {
+        border-bottom: none; }
+      .AssetManage-box .token-list-wrapper > li > img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px; }
+
+/*# sourceMappingURL=bundle-main.css.map*/
