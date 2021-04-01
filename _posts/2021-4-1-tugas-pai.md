@@ -21,3 +21,14 @@ Berikut video ceramah tentang hukum penipuan dalam Islam.
 Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mata dan hatinya ya, kesempatan bertaubat masih terbuka lebar. Hehehe...
 
 ![No 1](assets/images/author.jpg)
+
+![No 1](assets/images/0.jpeg) 
+![No 2](assets/images/1.jpeg)
+![No 3](assets/images/2.jpeg)
+![No 4](assets/images/3.jpeg)
+![No 5](assets/images/4.jpeg)
+![No 6](assets/images/5.jpeg)
+![No 7](assets/images/6.jpeg)
+
+
+![No 8](assets/images/7.jpeg)
