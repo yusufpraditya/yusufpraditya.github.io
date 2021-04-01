@@ -16,8 +16,11 @@ Berikut video ceramah tentang hukum penipuan dalam Islam.
 
 <div class="video-container"><iframe src="https://www.youtube.com/embed/RO8yQ7aZMrk?autoplay=1" frameborder="0" allowfullscreen></iframe></div>
 
+<div class="divider"></div>
+
 Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mata dan hatinya ya, kesempatan bertaubat masih terbuka lebar. Hehehe...
 
+<div class="divider"></div>
 
 ![No 1](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/0.jpeg)
 ![No 2](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/1.jpeg)
