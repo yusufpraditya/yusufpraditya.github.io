@@ -18,21 +18,15 @@ Berikut video ceramah tentang hukum penipuan dalam Islam.
 
 Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mata dan hatinya ya, kesempatan bertaubat masih terbuka lebar. Hehehe...
 
-![alt text](0.jpeg "No 1")
-![No 2](1.jpeg)
-![No 3](2.jpeg)
-![No 4](3.jpeg)
-![No 5](4.jpeg)
-![No 6](5.jpeg)
-![No 7](6.jpeg)
-![alt text](1.jpeg "No 1")
-![alt text](2.jpeg "No 2")
-![alt text](3.jpeg "No 3")
-![alt text](4.jpeg "No 4")
-![alt text](5.jpeg "No 5")
-![alt text](6.jpeg "No 6")
+
+![No 1](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/0.jpeg)
+![No 2](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/1.jpeg)
+![No 3](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/2.jpeg)
+![No 4](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/3.jpeg)
+![No 5](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/4.jpeg)
+![No 6](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/5.jpeg)
+![No 7](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/6.jpeg)
 
 
 Hehehehe maafkeun
-![No 8](7.jpeg)
-![alt text](7.jpeg "No 7")
+![No 8](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/7.jpeg)
