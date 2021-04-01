@@ -4,7 +4,7 @@ title: "Tugas Pendidikan Agama Islam"
 comments: true
 description: "Tugas Pendidikan Agama Islam"
 keywords: "hello, world"
-youtubeId: "RO8yQ7aZMrk"
+youtubeId: "RO8yQ7aZMrk?autoplay=1"
 ---
 
 ### Bagaimana hukum menipu dalam Islam?
