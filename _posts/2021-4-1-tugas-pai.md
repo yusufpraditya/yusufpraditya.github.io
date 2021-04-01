@@ -28,5 +28,5 @@ Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mat
 ![No 7](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/6.jpeg)
 
 
-Hehehehe maafkeun
+#### Hehehehe maafkeun
 ![No 8](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/7.jpeg)
