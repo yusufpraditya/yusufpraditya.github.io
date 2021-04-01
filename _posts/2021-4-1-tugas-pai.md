@@ -29,5 +29,5 @@ Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mat
 ![No 6](5.jpeg)
 ![No 7](6.jpeg)
 
-Hehehehe
+Hehehehe maafkeun
 ![No 8](7.jpeg)
