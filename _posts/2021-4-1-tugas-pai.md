@@ -4,7 +4,6 @@ title: "Tugas Pendidikan Agama Islam"
 comments: true
 description: "Tugas Pendidikan Agama Islam"
 keywords: "hello, world"
-youtubeId: "RO8yQ7aZMrk?autoplay=1"
 ---
 
 ### Bagaimana hukum menipu dalam Islam?
@@ -15,9 +14,7 @@ Nabi Muhammad SAW bersabda, "Rencana jahat dan tipu muslihat adanya di neraka." 
 
 Berikut video ceramah tentang hukum penipuan dalam Islam.
 
-
-{% include youtubePlayer.html id=page.youtubeId %}
-
+<div class="video-container"><iframe src="https://www.youtube.com/embed/RO8yQ7aZMrk?autoplay=1" frameborder="0" allowfullscreen></iframe></div>
 
 Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mata dan hatinya ya, kesempatan bertaubat masih terbuka lebar. Hehehe...
 
