@@ -15,7 +15,7 @@ Perbuatan menipu merupakan salah satu penyakit yang merusak hubungan antar manus
 
 Nabi Muhammad SAW bersabda, "Rencana jahat dan tipu muslihat adanya di neraka." Sanad hadis tersebut dinyatakan sahih oleh Syekh al-Albani.
 
-Berikut video ceramah tentang hukum penipuan dalam Islam<
+Berikut video ceramah tentang hukum penipuan dalam Islam.
 
 
 {% include youtubePlayer.html id=page.youtubeId %}
