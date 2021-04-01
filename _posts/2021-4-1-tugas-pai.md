@@ -35,5 +35,5 @@ Jadi bagaimana? Masih ingin melakukan tindakan penipuan lagi? Semoga terbuka mat
 #### Hehehehe maafkeun
 ![No 8](https://github.com/yusufpraditya/yusufpraditya.github.io/raw/master/_posts/7.jpeg)
 
-
-## TERTYPU KAU BABII
+<div class="divider"></div>
+# TERTYPU KAU BABII
