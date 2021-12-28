@@ -7,7 +7,7 @@ keywords: "huobi wallet"
 ---
 
 Pertama, buat wallet di aplikasi Huobi Wallet terlebih dahulu. Caranya:
-1. Kunjungi situs web resmi https://www.huobiwallet.fi untuk mengunduh Huobi Wallet versi terbaru. 
+1. Kunjungi situs web resmi [https://www.huobiwallet.fi](https://www.huobiwallet.fi) untuk mengunduh Huobi Wallet.
 2. Buka aplikasi Huobi Wallet, lalu klik 【Add wallet】 dan atur kata sandi keamanan. 
 
 ![1](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/2.jpg)
