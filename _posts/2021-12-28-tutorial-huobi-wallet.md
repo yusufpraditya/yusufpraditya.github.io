@@ -43,3 +43,5 @@ Klik 【Yes】
 ![7](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/6.jpg)
 
 Done! Invite teman agar menambah kupon
+
+<img src="https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/2.jpg" width="240">
