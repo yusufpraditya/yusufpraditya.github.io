@@ -26,6 +26,20 @@ Pertama, buat wallet di aplikasi Huobi Wallet terlebih dahulu. Caranya:
 Wallet sudah dibuat, sekarang klik "Ula"
 ![6](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/1.jpg)
 
-Masukkan kode referral " **X0586S** " 
+Masukkan kode referral " **X0586S** " CATATAN: Tanpa memasukkan kode referral tidak menambah +1 kupon draw!
 
 ![7](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/3.jpg)
+
+Klik 【Link your wallet】
+
+![7](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/4.jpg)
+
+Klik address yang akan di link
+
+![7](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/5.jpg)
+
+Klik 【Yes】
+
+![7](https://raw.githubusercontent.com/yusufpraditya/yusufpraditya.github.io/master/_posts/6.jpg)
+
+Done! Invite teman agar menambah kupon
